@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>GPX Map</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" integrity="sha256-fGJODaGYSINeMscXSbyu3k+sCt9ON9XOpsVOcvco3Qg=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" integrity="sha256-9mfj77orHLh2GsN7CbMvpjO/Wny/ZZhR7Pu7hy0Yig4=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.56.0/L.Control.Locate.min.css" integrity="sha256-Ut/Deer+FQCNBJwgADKMYrWeKgTvoFFPjtuXU69pun0=" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <div id="sidebar-toggle"><a role="button">&#9205;</a></div>
+        <div id="sidebar">
+            <ul class="tabs tabs-fixed-width">
+                <li class="tab"><a href="#tracks-panel" class="active">Tracks</a></li>
+                <li class="tab"><a href="#markers-panel">Markers</a></li>
+            </ul>
+            <div id="tracks-panel" class="sidebar-content">
+                <div id="track-list" class="collection sidebar-list"></div>
+                <input id="buttonImportGPXinput" style="display:none" type="file" name="files" onchange="app.importGpxFiles(this.files);">
+                <a id="buttonImportGPX" class="waves-effect waves-teal btn sidebar-bottom">Import GPX</a>
+            </div>
+            <div id="markers-panel" class="sidebar-content">
+                <div id="marker-list" class="collection sidebar-list"></div>
+                <a id="buttonAddMarker" class="waves-effect waves-teal btn sidebar-bottom">Add Marker</a>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js" integrity="sha256-pVJ6toFhRjat2LSvxugXvMnNDp33i00nfn0CpPXZevs=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js" integrity="sha256-RS5bDpN9YmmUIdtdu8ESPjNp1Bg/Fqu90PwN3uawdSQ=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.56.0/L.Control.Locate.min.js"></script>
+        <script src="https://cdn.rawgit.com/mapbox/togeojson/fe06a7a99dc98315db52fb93c89fa950024d680e/togeojson.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/gpximporter.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/marker.js"></script>
+        <script src="js/sidebar.js"></script>
+        <script src="js/storage.js"></script>
+        <script src="js/style.js"></script>
+        <script src="js/track.js"></script>
+        <script src="js/utils.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                app = new App();
+            });
+        </script>
+    </body>
+</html>

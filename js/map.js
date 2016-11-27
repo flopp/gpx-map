@@ -1,29 +1,37 @@
 Map = function(app) {
     this.app = app;
 
-    this.stamen_terrain_tiles = L.tileLayer('https://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+    this.osm_tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: [
-            'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
-            'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
-            'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ',
-            'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-        ].join(""),
+        '© ',
+        '<a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+        ' ♥ ',
+        '<a href="https://donate.openstreetmap.org" target="_blank">Donate!</a>'].join(''),
         maxZoom: 18
     });
-    this.stamen_toner_tiles = L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+    this.carto_light_tiles = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
         attribution: [
-            'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
-            'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
-            'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ',
-            'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-        ].join(""),
+        '© ',
+        '<a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors,',
+        ' © ',
+        '<a href="https://carto.com/attributions" target="_blank">CARTO</a>'].join(""),
         maxZoom: 18
     });
+    this.carto_dark_tiles = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+        attribution: [
+        '© ',
+        '<a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors,',
+        ' © ',
+        '<a href="https://carto.com/attributions" target="_blank">CARTO</a>'].join(""),
+        maxZoom: 18
+    });
+    
     var baseMaps = {
-        "Stamen/Terrain": this.stamen_terrain_tiles,
-        "Stamen/Toner": this.stamen_toner_tiles
+        "OpenStreetMap": this.osm_tiles,
+        "Carto Light": this.carto_light_tiles,
+        "Carto Dark": this.carto_dark_tiles
     };
-    this.map = L.map('map', {layers: [this.stamen_terrain_tiles]});
+    this.map = L.map('map', {layers: [this.osm_tiles]});
     L.control.layers(baseMaps, null).addTo(this.map);
 
     L.control.locate({icon: 'fa fa-crosshairs'}).addTo(this.map);

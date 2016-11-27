@@ -23,7 +23,6 @@ Open `index.html` in you browser.
 - [Leaflet](http://leafletjs.com/)
 - [Leaflet.Locate](https://github.com/domoritz/leaflet-locatecontrol)
 - [Leaflet-markers](https://github.com/pointhi/leaflet-color-markers)
-- [Stamen's Terrain/Toner tiles](http://maps.stamen.com/)
 - [MapBox's togeojson](https://github.com/mapbox/togeojson)
 - [Font Awesome](http://fontawesome.io/)
 - [JQuery](https://jquery.com/)

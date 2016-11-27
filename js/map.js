@@ -1,7 +1,7 @@
 Map = function(app) {
     this.app = app;
 
-    this.stamen_terrain_tiles = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+    this.stamen_terrain_tiles = L.tileLayer('https://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
         attribution: [
             'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
             'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
@@ -10,7 +10,7 @@ Map = function(app) {
         ].join(""),
         maxZoom: 18
     });
-    this.stamen_toner_tiles = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+    this.stamen_toner_tiles = L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
         attribution: [
             'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
             'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',

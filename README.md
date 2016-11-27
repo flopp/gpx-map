@@ -1,6 +1,6 @@
 # GPX Map
 
-Demo -> https://http://gpx.flopp.net/
+Demo -> https://gpx.flopp.net/
 
 ## Features
 
@@ -14,7 +14,7 @@ Demo -> https://http://gpx.flopp.net/
 
 Clone the repository:
 
-  git clone https://github.com/flopp/gpx-map.git
+    git clone https://github.com/flopp/gpx-map.git
 
 Open `index.html` in you browser.
 
